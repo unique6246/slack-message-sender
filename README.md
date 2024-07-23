@@ -23,7 +23,7 @@ change the {PORT} with your convenient port
     ```
 
 2. **Update Configuration:**
-    - Update the `src/main/resources/application.properties` file with your Slack Webhook URL:
+    - Update the `src/main/resources/application.properties` file with your Slack Webhook URL and your Slack OAuth token:
       ```properties
       slack.webhook.url=YOUR_WEBHOOK_URL
       slack.oauth.token=YOUR_OAUTH_TOKEN
