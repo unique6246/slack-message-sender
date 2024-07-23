@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack Message Sender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Send Message to Slack</h1>
+    <form id="slackForm" class="messageBox">
+        <label for="messageInput"></label><textarea id="messageInput" name="message" required></textarea>
+        <button id="sendButton" type="submit">
+            <div class="svg-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 5L22 12L15 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span>Send</span>
+        </button>
+    </form>
+    <div id="response"></div>
+
+    <h1>Slack Operations</h1>
+    <button id="fetchUsers">Get Users</button>
+    <button id="fetchMessages">Get Messages</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
