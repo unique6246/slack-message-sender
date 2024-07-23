@@ -26,6 +26,7 @@ change the {PORT} with your convenient port
     - Update the `src/main/resources/application.properties` file with your Slack Webhook URL:
       ```properties
       slack.webhook.url=YOUR_WEBHOOK_URL
+      slack.oauth.token=YOUR_OAUTH_TOKEN
       ```
 
 3. **Build the Project:**
