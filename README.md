@@ -23,11 +23,12 @@ change the {PORT} with your convenient port
     ```
 
 2. **Update Configuration:**
-    - Update the `src/main/resources/application.properties` file with your Slack Webhook URL:
+    - Update the `src/main/resources/application.properties` file with your Slack Webhook URL and your Slack OAuth token:
       ```properties
       slack.webhook.url=YOUR_WEBHOOK_URL
+      slack.oauth.token=YOUR_OAUTH_TOKEN
       ```
-
+    
 3. **Build the Project:**
     ```bash
     mvn clean install
@@ -47,7 +48,25 @@ change the {PORT} with your convenient port
     - Response: `200 OK` with message "Message sent to Slack"
 
 
+### Build Docker Image
 
+1. **Build Docker Image For Dockerfile:**
+    ```bash
+    docker build -t slack-message-sender .
+    ```
+
+2. **Run Docker Container:**
+    ```bash
+    docker run -d -p 8080:8080 --name slack-message-sender-container slack-message-sender
+    ```
+
+3. **Verify Container:**
+    - Check if the container is running:
+      ```bash
+      docker ps
+      ```
+
+    - Access the application at `http://localhost:8080` through your browser.
 
 ## Tests
 - Unit tests and integration tests are included. To run the tests:
