@@ -37,6 +37,7 @@ public class SlackServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
+    // Test for sending a message to Slack
     @Test
     void sendMessage_ShouldSendMessageToSlack() {
         String message = "Hello Slack";
@@ -45,9 +46,9 @@ public class SlackServiceTest {
                 .thenReturn(ResponseEntity.ok("Message sent"));
 
         slackService.sendMessage(message);
-
     }
 
+    // Test for getting users from Slack
     @Test
     void getUsers_ShouldReturnUserList() {
         String url = "https://slack.com/api/users.list";
@@ -65,6 +66,7 @@ public class SlackServiceTest {
         assertEquals(List.of("User1", "User2"), users);
     }
 
+    // Test for getting messages from a specific Slack channel
     @Test
     void getChannelMessages_ShouldReturnMessageList() {
         String url = "https://slack.com/api/conversations.history?channel=C07DQU7EECC";

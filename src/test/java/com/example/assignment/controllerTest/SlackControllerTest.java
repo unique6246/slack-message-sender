@@ -29,6 +29,7 @@ public class SlackControllerTest {
         MockitoAnnotations.openMocks(this);
     }
 
+    // Test for valid message sending
     @Test
     void sendSlackMessage_ShouldReturnOk_WhenMessageIsValid() {
         Map<String, String> payload = new HashMap<>();
@@ -40,6 +41,7 @@ public class SlackControllerTest {
         assertEquals(ResponseEntity.ok("Message sent to Slack"), response);
     }
 
+    // Test for empty message sending
     @Test
     void sendSlackMessage_ShouldReturnBadRequest_WhenMessageIsEmpty() {
         Map<String, String> payload = new HashMap<>();
@@ -50,6 +52,7 @@ public class SlackControllerTest {
         assertEquals(ResponseEntity.badRequest().body("Message cannot be empty"), response);
     }
 
+    // Test for getting users
     @Test
     void getUsers_ShouldReturnUserList() {
         when(slackService.getUsers()).thenReturn(List.of("User1", "User2"));
@@ -59,6 +62,7 @@ public class SlackControllerTest {
         assertEquals(ResponseEntity.ok(List.of("User1", "User2")), response);
     }
 
+    // Test for getting channel messages
     @Test
     void getChannelMessages_ShouldReturnMessageList() {
         when(slackService.getChannelMessages()).thenReturn(List.of("Message1", "Message2"));
